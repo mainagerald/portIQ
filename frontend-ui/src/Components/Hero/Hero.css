@@ -1,0 +1,29 @@
+/* @keyframes moveBackground {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  #hero {
+    background: linear-gradient(135deg, #4dd0e1, #1e88e5);
+    position: relative;
+    overflow: hidden;
+    animation: moveBackground 10s linear infinite alternate;
+  }
+  
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff, transparent);
+    transform: skewY(-12deg);
+    transform-origin: bottom right;
+    z-index: -1;
+  }
+   */
