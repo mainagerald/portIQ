@@ -27,13 +27,21 @@ const CompanyPage = (props: Props) => {
   return (
     <>
       {company ? (
-        <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-hidden">
+        <div className="w-full relative flex ct-docs-disable-sidebar-content overflow-x-auto">
           <Sidebar />
           <CompanyDashboard ticker={ticker!}>
             <Tile title="Company Name" subTitle={company.companyName} />
             <Tile title="Price" subTitle={"$" + company.price.toString()} />
             <Tile title="DCF" subTitle={"$" + company.dcf.toString()} />
             <Tile title="Sector" subTitle={company.sector} />
+            <Tile
+              title="Trading status"
+              subTitle={
+                company.isActivelyTrading ? "Actively Trading" : "Not Trading"
+              }
+            />
+            <Tile title="Etf?" subTitle={company.isEtf ? "Yes" : "No"} />
+
             <CompFinder ticker={company.symbol} />
             <TenKFinder ticker={company.symbol} />
             <p className="bg-blue-100 shadow rounded text-medium font-medium text-gray-900 p-3 mt-1 m-4">
