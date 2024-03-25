@@ -1,4 +1,6 @@
 import React, { SyntheticEvent } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   onPortfolioDelete: (e: SyntheticEvent) => void;
@@ -10,8 +12,8 @@ const DeletePortfolio = ({ onPortfolioDelete, portfolioValue }: Props) => {
     <div>
       <form onSubmit={onPortfolioDelete}>
         <input hidden={true} value={portfolioValue} />
-        <button className="block w-full py-3 text-white duration-200 border-2 rounded-lg bg-red-500 hover:text-red-500 hover:bg-white border-red-500">
-          X
+        <button className="text-red duration-200 rounded-lg hover:text-red-500 border-red-500">
+        <FontAwesomeIcon icon={faTrash} />
         </button>
       </form>
     </div>

@@ -1,4 +1,6 @@
 import { SyntheticEvent } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
   onPortfolioCreate: (e: SyntheticEvent) => void;
@@ -12,9 +14,9 @@ const AddPortfolio = ({ onPortfolioCreate, symbol }: Props) => {
         <input readOnly={true} hidden={true} value={symbol} />
         <button
           type="submit"
-          className="p-2 px-8 text-white bg-darkBlue rounded-lg hover:opacity-70 focus:outline-none"
+          className="p-1 px-2 text-white bg-darkBlue rounded-lg hover:opacity-70 focus:outline-none"
         >
-          Add
+          <FontAwesomeIcon icon={faPlus} />
         </button>
       </form>
     </div>
