@@ -7,6 +7,10 @@ export interface User {
   email: string;
   roles: string[];
   email_verified: boolean;
+  first_name?: string;
+  last_name?: string;
+  profile_picture?: string;
+  provider?: string;
 }
 
 interface AuthState {
@@ -14,6 +18,7 @@ interface AuthState {
   isAuthenticated: boolean;
   loading: boolean;
   error: string | null;
+  token?: string;
 }
 
 const initialState: AuthState = {
@@ -35,6 +40,10 @@ const authSlice = createSlice({
     loginStart(state) {
       state.loading = true;
       state.error = null;
+    },
+    // Update user profile
+    updateUser(state, action: PayloadAction<User>) {
+      state.user = action.payload;
     },
     // Login success: set user and authenticated
     loginSuccess(state, action: PayloadAction<User>) {
@@ -65,5 +74,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure, logout, setRoles } = authSlice.actions;
+export const { loginStart, loginSuccess, loginFailure, logout, setRoles, updateUser } = authSlice.actions;
 export default authSlice.reducer;
