@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from .base import *
 
 # Load environment variables from .env file
 load_dotenv()
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u=c)7z!#&zguq4tr4=@@mbmt5^6qse3ugs73k^=_d$jq2w0gj$'
+SECRET_KEY=os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -149,6 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Use custom user model
 AUTH_USER_MODEL = 'users.User'
+
 
 # Django REST Framework and SimpleJWT configuration
 REST_FRAMEWORK = {
