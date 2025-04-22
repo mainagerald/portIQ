@@ -1,0 +1,13 @@
+django
+djangorestframework
+djangorestframework-simplejwt
+dotenv
+psycopg2-binary
+python-dotenv
+django-cors-headers
+drf-yasg
+requests
+google-auth
+pytest
+pytest-django
+requests-mock
