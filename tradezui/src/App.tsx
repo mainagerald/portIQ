@@ -10,6 +10,8 @@ import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import Profile from "./pages/Profile";
+import MarketDashboard from "./pages/MarketDashboard";
+import StockDetail from "./pages/StockDetail";
 import { RootState } from "@/redux/store";
 
 // Protected route component - only for authenticated users
@@ -41,6 +43,10 @@ function App() {
             <Route path="profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
             <Route path="portfolio" element={<ProtectedRoute><div>Portfolio Page (Coming Soon)</div></ProtectedRoute>} />
             <Route path="settings" element={<ProtectedRoute><div>Settings Page (Coming Soon)</div></ProtectedRoute>} />
+            
+            {/* Market routes */}
+            <Route path="market" element={<MarketDashboard />} />
+            <Route path="stock/:symbol" element={<StockDetail />} />
           </Route>
         </Routes>
       </BrowserRouter>
